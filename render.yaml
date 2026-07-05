@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: repo-explainer-backend
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OLLAMA_URL
+        value: http://localhost:11434
+    healthCheckPath: /
+
+  - type: web
+    name: repo-explainer-frontend
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://repo-explainer-backend.onrender.com
