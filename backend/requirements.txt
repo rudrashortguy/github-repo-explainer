@@ -1,0 +1,8 @@
+fastapi[standard]
+gitpython
+pydantic
+httpx
+python-multipart
+pydantic-settings
+slowapi
+structlog

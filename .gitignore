@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+temp_clones/
+node_modules/
+dist/
+.vscode/
+build/
+*.pem
+*.key
+backend/venv/
